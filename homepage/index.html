@@ -4,10 +4,10 @@
      <title>homepage</title>
     </head>
     <body>
+      <table id="week"><tr id="current"></tr></table>
       <script>
-        const days = ["0","1","2","3","4","5","6"];
         const d = new Date();
-        var useday = days[d.getDay()];
+        var useday = d.getDay()
         for (let i = 0; i < 6; i++) {
           let newtd = document.createElement("td");
           let day = d.getDate() - useday + i;
@@ -21,7 +21,5 @@
           document.getElementById("current").appendChild(newtd)
         }
       </script>
-      <table id="week"><tr id="current"></tr></table>
-      
     </body>
   </html>
