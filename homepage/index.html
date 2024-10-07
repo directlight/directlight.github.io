@@ -26,37 +26,9 @@
       <script>
         const d = new Date();
         var useday = d.getDay()
-        const 30day = [3,5,8,10]
         for (let i = 0; i < 7; i++) {
           let newtd = document.createElement("td");
           let day = d.getDate() - useday + i;
-          let oldday = day
-          if (day < 1) { 
-            if (30day.includes(d.getMonth() - 1) == true){
-              day = 30 - oldday;
-            } else if(d.getMonth == 2 ){
-              if(d.getFullYear % 4 > 0 && d.getFullYear % 100 == 0){
-                day = 28 - oldday;
-              }
-              if(d.getFullYear % 400 == 0 || d.getFullYear % 4 == 0){
-                day = 29 - oldday;
-              }
-            } else {
-              day = 31 - oldday;
-            }
-          }
-          if(30day.includes(d.getMonth() && day > 30){
-            day = oldday - 30
-          } else if(d.getMonth == 1 ){
-            if(d.getFullYear % 4 > 0 && d.getFullYear % 100 == 0){
-              day = oldday - 28;
-            }
-            if(d.getFullYear % 400 == 0 || d.getFullYear % 4 == 0){
-              day = oldday - 29;
-            }
-          } else if (day > 31){
-            day = oldday - 31
-          }
           newtd.innerHTML = day;
           if (i == 0 || i == 6){
             newtd.setAttribute("class", "weekend")
