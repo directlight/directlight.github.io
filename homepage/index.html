@@ -4,6 +4,8 @@
      <title>homepage</title>
     </head>
     <body>
+      <h1>Good Morning</h1>
+        <div class="calendar">
       <table id="week" cellspacing="0" cellpadding="0"><tr id="current"></tr></table>
       <script>
         const d = new Date();
@@ -27,6 +29,8 @@
         }
         td{
           border: 1px solid #000;
+          width: 16px;
+          text-align:center;
         }
         td.weekend{
           background: #ddd;
@@ -35,6 +39,11 @@
           background: #f00;
           color:#fff
         }
+        .calendar{
+          float:right
+        }
       </style>
+      </div>
+      <div class="feed"></div>
     </body>
   </html>
