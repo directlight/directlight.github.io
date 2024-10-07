@@ -1,0 +1,27 @@
+<DOCTYPE html>
+  <html>
+    <head>
+     <title>homepage</title>
+    </head>
+    <body>
+      <script>
+        const days = ["0","1","2","3","4","5","6"];
+        const d = new Date();
+        var useday = days[d.getDay()];
+        for (let i = 0; i < 6; i++) {
+          let newtd = document.createElement("td");
+          let day = d.getDate() - useday + i;
+          newtd.innerHTML = day;
+          if (i == 0 || i == 6){
+            newtd.setAttribute("class", "weekend")
+          }
+          if (i == useday){
+            newtd.setAttribute("class", "today");
+          }
+          document.getElementById("current").appendChild(newtd)
+        }
+      </script>
+      <table id="week"><tr id="current"></tr></table>
+      
+    </body>
+  </html>
