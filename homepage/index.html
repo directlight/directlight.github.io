@@ -30,11 +30,42 @@
           let newtd = document.createElement("td");
           let day = d.getDate() - useday + i;
           newtd.innerHTML = day;
+          let month = d.getMonth()
+          let year = d.getFullYear()
+          if (day < 1){
+            newtd.innerHTML = " ";
+            newtd.classList.add("out")
+          } else if (month == 2 && day > 28){
+            if ((year % 4) == 0 && day > 29){
+              newtd.innerHTML = " ";
+              newtd.classList.add("out")
+            } else{
+              newtd.innerHTML = " ";
+              newtd.classList.add("out")
+            }
+          } else if (month == 3 && day > 30){
+            newtd.innerHTML = " ";
+            newtd.classList.add("out")
+          } else if (month == 5 && day > 30){
+            newtd.innerHTML = " ";
+            newtd.classList.add("out")
+          } else if (month == 8 && day > 30){
+            newtd.innerHTML = " ";
+            newtd.classList.add("out")
+          } else if (month == 10 && day > 30){
+            newtd.innerHTML = " ";
+            newtd.classList.add("out")
+          } else {
+            if(day > 31){
+              newtd.innerHTML = " ";
+              newtd.classList.add("out")
+            }
+          }
           if (i == 0 || i == 6){
-            newtd.setAttribute("class", "weekend")
+            newtd.classList.add("weekend")
           }
           if (i == useday){
-            newtd.setAttribute("class", "today");
+            newtd.classList.add("today");
           }
           document.getElementById("current").appendChild(newtd)
         }
