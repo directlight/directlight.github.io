@@ -30,13 +30,17 @@
         var weekstart = d - useDay;
         for (; weekstart < 7;){
           weekstart -= 7;
+          console.log(weekstart)
         }
         for (let j = d.getMonth; map[j] < weekstart; weekstart += 7) {
+          console.log(map[j])
+          console.log(weekstart)
           let weekTr = document.createElement("tr");
           for (let i = 0; i < 7; i++) {
             let dayTd = document.createElement("td");
             let text = " ";
             let today = weekstart + i
+            console.log(today)
             if (today > 0 || today <= map[j]){
               text = today
             }
